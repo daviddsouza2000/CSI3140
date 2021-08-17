@@ -1,0 +1,11 @@
+.link {
+    border: 5px solid black;
+    color: red;
+    background-color: red;
+    text-align: center;
+}
+
+.link:hover {
+    color:purple;
+    background-color: yellow;
+}

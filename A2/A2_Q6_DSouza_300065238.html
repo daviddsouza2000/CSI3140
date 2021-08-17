@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script type="text/javascript">
+    while(true){
+        var a = window.prompt("Enter a five-digit number: ");
+        var b = parseInt(a);
+        if (b <= 9999 || b >= 100000) {
+            alert("The number is not a five-digit number");    
+        } else {
+            break;
+        }
+    }
+
+    if (b % 10 == Math.floor(b / 10000)){
+        if ( Math.floor( (b % 100) / 10 ) == (Math.floor(b / 1000) % 10) ) {
+            document.writeln(`${b} is a palindrome.`);
+        } else {
+            document.writeln(`${b} is not a palindrome.`);
+        }
+    } else {
+        document.writeln(`${b} is not a palindrome.`);
+    }
+    
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>

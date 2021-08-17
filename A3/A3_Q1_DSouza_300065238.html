@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<script src="./A3_Q1_DSouza_300065238.js">
+</script>
+<script type="text/javascript">
+window.onload = function(){
+    var fahrenheitToCelsius = document.getElementById("fahrenheitToCelsius");
+    var celsiusToFahrenheit = document.getElementById("celsiusToFahrenheit");
+    var input = document.getElementById("num");
+    var temp = document.getElementById("temp");
+    fahrenheitToCelsius.addEventListener('click', function(){
+        var c = celsius(input.value);
+        temp.innerHTML = "" + input.value + " Fahrenheit = " + c + " Celsius";
+    });
+    celsiusToFahrenheit.addEventListener('click', function(){
+        var f = fahrenheit(input.value);
+        temp.innerHTML = "" + input.value + " Celsius = " + f + " Fahrenheit";
+    });
+}
+</script>
+</head>
+
+<body>
+    <p>Enter a number into the input field, then click on a button to converet between Fahrenheir and Celsius</p>
+    <button type="button" id="fahrenheitToCelsius" name="fahrenheitToCelsius">Fahrenheit to Celsius</button>
+    <button type="button" id="celsiusToFahrenheit" name="celsiusToFahrenheit">Celsius to Fahrenheit</button>
+    <input type="number" id="num" name="num" value="42">
+    <p id="temp"></p>
+</body>
+    
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<script type="text/javascript">
+var num = Math.floor(Math.random() * 1000) + 1;
+console.log(num);
+
+window.onload = function(){
+    var submitGuess = document.getElementById("submitGuess");
+    var guess = document.getElementById("guess");
+    var temp = document.getElementById("temp");
+    submitGuess.addEventListener('click', function() {
+        guessNum = parseInt(guess.value);
+        console.log(guessNum)
+        if (guessNum < 1 || guess >1000){
+            temp.innerHTML = "Guess was not between 1 and 1000";
+        }
+        else if (guessNum > num) {
+            temp.innerHTML = "Too high. Try again.";
+        }
+        else if (guessNum < num) {
+            temp.innerHTML = "Too low. Try again.";
+        }
+        else if (guessNum == num) {
+            temp.innerHTML = "Congratulation. You guessed the number!";
+        }
+    });
+}
+</script>
+</head>
+<body>
+<label for="guess">Guess the number between 1 and 1000: </label>
+<input type="number" id="guess" name="guess" value="500">
+<button type="button" id="submitGuess" name="submitGuess">Submit Guess</button>
+<p id="temp"></p>
+</body>
+    
+</html>

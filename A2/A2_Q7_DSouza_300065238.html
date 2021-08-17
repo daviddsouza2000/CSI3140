@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script type="text/javascript">
+    var productQuantities = {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0
+    };
+    
+    function addToDict(dict, productNum, quantity) {
+        dict[productNum] += quantity;
+    }
+
+    while(true){
+        var a = window.prompt("Enter a the product number and the quantity (seperated by a space) \n Leave input empty to display final results \n product 1, $2.98; product 2, $4.50; product 3, $9.98; product 4, $4.49; and product 5");
+        if (a) {
+            var b = a.split(" ");
+            addToDict(productQuantities, b[0], parseInt(b[1]));
+        } else {
+            break;
+        }
+    }
+
+    window.onload = function(){
+        document.getElementById('p1q').innerHTML = productQuantities["1"];
+        document.getElementById('p2q').innerHTML = productQuantities["2"];
+        document.getElementById('p3q').innerHTML = productQuantities["3"];
+        document.getElementById('p4q').innerHTML = productQuantities["4"];
+        document.getElementById('p5q').innerHTML = productQuantities["5"];
+        document.getElementById('p1r').innerHTML = productQuantities["1"] * 2.98;
+        document.getElementById('p2r').innerHTML = productQuantities["2"] * 4.50;
+        document.getElementById('p3r').innerHTML = productQuantities["3"] * 9.98;
+        document.getElementById('p4r').innerHTML = productQuantities["4"] * 4.49;
+        document.getElementById('p5r').innerHTML = productQuantities["5"] * 6.87;
+    };    
+    </script>
+</head>
+
+<body>
+    <table style="width:100%">
+        <tr>
+            <th>Product Number</th>
+            <th>Quantity</th> 
+            <th>Revenue</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td id='p1q'></td>
+            <td id='p1r'></td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td id='p2q'></td>
+            <td id='p2r'></td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td id='p3q'></td>
+            <td id='p3r'></td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td id='p4q'></td>
+            <td id='p4r'></td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td id='p5q'></td>
+            <td id='p5r'></td>
+        </tr>
+    </table>
+</body>
+
+</html>

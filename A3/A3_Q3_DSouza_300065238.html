@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<script type="text/javascript">
+var count = 0
+var num = Math.floor(Math.random() * 1000) + 1;
+console.log(num);
+
+window.onload = function(){
+    var submitGuess = document.getElementById("submitGuess");
+    var guess = document.getElementById("guess");
+    var temp = document.getElementById("temp");
+
+    // do not need to filter if input if not a number because inpnut has type number
+    submitGuess.addEventListener('click', function() {
+        guessNum = parseInt(guess.value);
+        console.log(guessNum)
+        if (guessNum < 1 || guess >1000){
+            temp.innerHTML = "Guess was not between 1 and 1000";
+        }
+        else if (guessNum > num) {
+            temp.innerHTML = "Too high. Try again.";
+            count++;
+        }
+        else if (guessNum < num) {
+            temp.innerHTML = "Too low. Try again.";
+            count++;
+        }
+        else if (guessNum == num) {
+            if (count < 10){
+                temp.innerHTML = "Either you know the secret or you got lucky!";
+            }
+            else if (count == 10){
+                temp.innerHTML = "Ahah! You know the secret";
+            }
+            else {
+                temp.innerHTML = "You should be able to do better!";
+            }
+        }
+    });
+}
+</script>
+</head>
+<body>
+<label for="guess">Guess the number between 1 and 1000: </label>
+<input type="number" id="guess" name="guess" value="500">
+<button type="button" id="submitGuess" name="submitGuess">Submit Guess</button>
+<p id="temp"></p>
+</body>
+    
+</html>
